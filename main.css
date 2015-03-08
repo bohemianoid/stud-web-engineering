@@ -12,12 +12,12 @@ img {
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+  content: ' ';
+  display: table;
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 .container {
@@ -92,6 +92,10 @@ img {
   background-image: url( 'images/bg2.png' );
 }
 
+.portfolio .main {
+  background-image: url( 'images/bg3.png' );
+}
+
 .section {
   padding: 0;
   margin: 0;
@@ -149,6 +153,37 @@ img {
 
 .blog .article h2 + p {
   display: inline;
+}
+
+.gallery {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.gallery__item {
+  margin: 1em 0;
+  background: #ffffff;
+  color: #414141;
+}
+
+.gallery__item:first-child {
+  margin-top: 0;
+}
+
+.gallery__item:last-child {
+  margin-bottom: 0;
+}
+
+.info {
+  margin: 1em;
+}
+
+.info h2,
+.info p {
+  margin: 0;
+  font-size: 1.4em;
+  line-height: 1.6;
 }
 
 .footer {

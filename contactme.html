@@ -1,131 +1,89 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Contact me</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+		<title>Contact Me</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="normalize.css">
 		<link rel="stylesheet" href="main.css">
-
-		<body data-twttr-rendered="true">
-
-			<div >
-				<div >
-					<div >
-						<h1>LARA JADE</h1>
-
-					</div>
-					<div >
-						<img src="images/m1.png" >
-						<img src="images/m2.png">
-						<img src="images/m3.png">
-						<img src="images/m4.png">
-					</div>
+	</head>
+	<body class="contact" data-twttr-rendered="true">
+		<div class="container">
+			<div class="header clearfix">
+				<div class="branding">
+					<h1>LARA JADE</h1>
 				</div>
-				<div   role="main">
-				
-					<div >
-						<br><br>
-						<p >
-							<strong>Contact Me</strong>
-						</p>
-					</div>
-					<br><br><br><br><br><br><br><br><br><br><br>
-
-					<div >
-						<form>
-							<p >
-								First name:
-							</p>
-
-							<input type="text" name="firstname" >
-							<br>
-							<p >
-								Last name:
-							</p>
-
-							<input type="text" name="lastname" >
-
-							<br>
-							<textarea type="text" name="message" rows="7" cols="65" >	</textarea>
-							<br>
-							<button type="button" >
-								Submit
-							</button>
-						</form>
-					</div>
-					<br>
-
-					<div >
-						<div >
-							<strong >Email</strong><strong >larajade@larajade.co.uk</strong>
-							<br>
-							<strong >Fax</strong><strong > +44 (0) 1234 567891</strong>
-							<br>
-							<strong >Address: </strong><strong > New Chrichton Cottage, Arradoul, Buckie, AB43 AP
-							Scotland UK</strong>
-						</div>
-					</div>
-
-				</div>
-
-
-				<div  >
-					<!-- <div > -->
-					<div  >
-						<strong>ADDRESS</strong>
-						<br>
-						<br>
-						New Chrichton Cottage
-						<br>
-						Arradoul, Buckie
-						<br>
-						AB43 5AP
-						<br>
-						Scotland UK
-						<br>
-						<br>
-						+44 (0) 1234 567891
-						<br>
-						<br>
-						<img  src="images/qcode.png" >
-					</div>
-					<div  >
-						<strong>About Me</strong>
-						<br>
-						<br>
-						Lara is a freelance web designer with satisfied clients worldwide. Lara has been designing websites professionally for over eight years, and...... <strong>More</strong>
-						<br>
-						<br>
-						<strong>Follow me:</strong>
-						<br>
-						<br>
-						<img src="images/twitter.png" >
-						<img src="images/linkedin.png" >
-						<img src="images/pinterest.png" >
-						<img src="images/facebook.png" >
-						<img src="images/google_plus.png" >
-					</div>
-					<div  >
-						<strong>My last post</strong>
-						<br>
-						<br>
-						Over the previous year, the Polymer team has spent a lot of time teaching developers how to create their own elements. This has lead to a rapidly growing ecosystem, buoyed in large... <strong>More</strong>
-					</div>
-					<div >
-						<strong>Last Project</strong>
-						<br>
-						</br>
-						Freelance WebSite 
-						<br>
-						<br>
-						<img  src="images/portfolio/p1.jpg" >
-					</div>
-
-					<!-- </div> -->
+				<div class="nav">
+					<ul>
+						<li><a class="icon-home" href="index.html"><span>Home</span></a></li>
+						<li><a class="icon-blog" href="blog.html"><span>Blog</span></a></li>
+						<li><a class="icon-portfolio" href="portfolio.html"><span>Portfolio</span></a></li>
+						<li><a class="icon-contact" href="contactme.html"><span>Contact Me</span></a></li>
+					</ul>
 				</div>
 			</div>
-
-		</body>
+			<div class="main clearfix" role="main">
+				<div class="article">
+					<h2>Contact Me</h2>
+					<form>
+						<p>
+							<label>First name:</label>
+							<input type="text" name="firstname">
+						</p>
+						<p>
+							<label>Last name:</label>
+							<input type="text" name="lastname">
+						</p>
+						<p>
+							<textarea type="text" name="message" rows="7" cols="65" >	</textarea>
+						</p>
+						<p>
+							<button type="button">Submit</button>
+						</p>
+					</form>
+					<div>
+						<p>Email</p><p>larajade@larajade.co.uk</p>
+						<p>Fax</p><p>+44 (0) 1234 567891</p>
+						<p>Address:</p><p>New Chrichton Cottage, Arradoul, Buckie, AB43 AP Scotland UK</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer clearfix">
+				<div class="footer__item">
+					<h2>ADDRESS</h2>
+					<address>
+						New Chrichton Cottage<br>
+						Arradoul, Buckie<br>
+						AB43 5AP<br>
+						Scotland UK<br>
+						<br>
+						+44 (0) 1234 567891<br>
+						<br>
+						<img src="images/qcode.png" width="76px" height="76px">
+				</div>
+				<div class="footer__item clearfix">
+					<h2>About Me</h2>
+					<p>Lara is a freelance web designer with satisfied clients worldwide. Lara has been designing websites professionally for over eight years, and... <a href="#">More</a></p>
+					<h2>Follow me:</h2>
+					<ul class="connect">
+						<li><a class="icon-twitter" href="#"><span>Twitter</span></a></li>
+						<li><a class="icon-linkedin" href="#"><span>Linkedin</span></a></li>
+						<li><a class="icon-pinterest" href="#"><span>Pinterest</span></a></li>
+						<li><a class="icon-facebook" href="#"><span>Facebook</span></a></li>
+						<li><a class="icon-googleplus" href="#"><span>Google+</span></a></li>
+					</ul>
+				</div>
+				<div class="footer__item">
+					<h2>My last post</h2>
+					<p>Over the previous year, the Polymer team has spent a lot of time teaching developers how to create their own elements. This has lead to a rapidly growing ecosystem, buoyed in large... <a href="#">More</a></p>
+				</div>
+				<div class="footer__item">
+					<h2>Last Project</h2>
+					<p>Freelance WebSite</p>
+					<img src="images/portfolio/p1.jpg">
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
