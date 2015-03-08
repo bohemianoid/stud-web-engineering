@@ -21,7 +21,26 @@ img {
 }
 
 .container {
+  max-width: 106em;
   background: #dddddd;
+}
+
+@media only screen and ( min-width: 480px ) {
+  .container {
+    margin: 1em;
+  }
+}
+
+@media only screen and ( min-width: 768px ) {
+  .container {
+    margin: 2em;
+  }
+}
+
+@media only screen and ( min-width: 1100px ) {
+  .container {
+    margin: 4em auto;
+  }
 }
 
 .branding {
@@ -29,15 +48,30 @@ img {
   margin: 0.5em 1em;
 }
 
+@media only screen and ( min-width: 768px ) {
+  .branding {
+    margin: 2em 2em 1.9em 2em;
+  }
+}
+
 .branding h1 {
   margin: 0;
   color: #414141;
   font-size: 2.3em;
   font-weight: normal;
+  line-height: 1;
 }
 
 .nav {
   float: right;
+  background: #414141;
+}
+
+@media only screen and ( min-width: 480px ) {
+  .nav {
+    width: 55%;
+    padding-left: 5%;
+  }
 }
 
 .nav ul {
@@ -50,12 +84,31 @@ img {
   float: left;
 }
 
+@media only screen and ( min-width: 480px ) {
+  .nav li {
+    margin-right: 1.5%;
+  }
+}
+
 .nav li a {
   display: block;
   width: 3.6em;
   height: 3.6em;
   background-size: cover;
   background-position: center;
+}
+
+@media only screen and ( min-width: 768px ) {
+  .nav li a {
+    width: 6.2em;
+    height: 6.2em;
+  }
+}
+
+@media only screen and ( min-width: 1100px ) {
+  .nav li a {
+    width: 11.4em;
+  }
 }
 
 .nav li a span {
@@ -82,6 +135,19 @@ img {
   padding: 1em;
   background-size: cover;
   background-position: center;
+}
+
+@media only screen and ( min-width: 480px ) {
+  .main {
+    margin: 1em;
+  }
+}
+
+@media only screen and ( min-width: 768px ) {
+  .main {
+    padding: 2em;
+    margin: 2em;
+  }
 }
 
 .home .main {
@@ -301,6 +367,19 @@ img {
   padding: 1em;
   background: #027d8d;
   color: #ffffff;
+}
+
+@media only screen and ( min-width: 480px ) {
+  .footer {
+    margin: 1em;
+  }
+}
+
+@media only screen and ( min-width: 768px ) {
+  .footer {
+    padding: 2em;
+    margin: 2em;
+  }
 }
 
 .footer a {
