@@ -32,6 +32,12 @@ nav ul {
   width:16em;
   background-color:#ffffff;
   border-radius:25px;
+  opacity:0.2;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.floating-menu:hover {
+  opacity:1;
 }
 
 .floating-menu .minimize {
