@@ -20,6 +20,93 @@ img {
   clear: both;
 }
 
+nav ul {
+  list-style: none;
+}
+
+.floating-menu {
+  display:block;
+  position:absolute;
+  padding:2em;
+  height:16em;
+  width:16em;
+  background-color:#ffffff;
+  border-radius:25px;
+}
+
+.floating-menu .minimize {
+  display:block;
+  position:relative;
+  height:3.5em;
+  width:3.5em;
+  top:-1.5em;
+  left:-1.5em;
+  z-index:1;
+  background-image: url( 'images/newmenu/menu2.png' );
+  background-size:cover;
+}
+
+.floating-menu .pin {
+  display:block;
+  position:relative;
+  height:1.5em;
+  width:1.5em;
+  top:-5em;
+  left:2.25em;
+  z-index:1;
+  background-image: url( 'images/newmenu/sticky_icon_on.png' );
+  background-size:cover;
+}
+
+.floating-menu ul {
+  position:relative;
+  top:-5em;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin:0;padding:0;
+}
+
+.floating-menu li a {
+  display:block;
+  height:8em;
+  width:8em;
+  margin:auto;
+  background-size:cover;
+  background-position:center;
+}
+
+@-webkit-keyframes shake {
+    0%   {transform: translate(0.1em, 0.1em) rotate(0deg);}
+    25%  {transform: translate(0.1em, -0.1em) rotate(1.5deg);}
+    50%  {transform: translate(-0.1em, -0.1em) rotate(0deg);}
+    75%  {transform: translate(-0.1em, 0.1em) rotate(-1.5deg);}
+}
+
+.floating-menu li a:hover {
+  -webkit-animation: shake 0.25s infinite;
+}
+
+.floating-menu li a span {
+  display:none;
+}
+
+.floating-menu .icon-home {
+  background-image: url( 'images/newmenu/mm1.png' );
+}
+
+.floating-menu .icon-blog {
+  background-image: url( 'images/newmenu/mm2.png' );
+}
+
+.floating-menu .icon-portfolio {
+  background-image: url( 'images/newmenu/mm3.png' );
+}
+
+.floating-menu .icon-contact {
+  background-image: url( 'images/newmenu/mm4.png' );
+}
+
 .container {
   max-width: 106em;
   background: #dddddd;;
@@ -85,7 +172,6 @@ img {
 .nav ul {
   padding: 0;
   margin: 0;
-  list-style: none;
 }
 
 .nav li {
