@@ -20,6 +20,10 @@ img {
   clear: both;
 }
 
+.notdisplayed {
+  display:none;
+}
+
 nav ul {
   list-style: none;
 }
@@ -28,12 +32,25 @@ nav ul {
   display:block;
   position:absolute;
   padding:2em;
-  height:16em;
-  width:16em;
   background-color:#ffffff;
   border-radius:25px;
   opacity:0.2;
+  /*transition:height 0.25s ease-in-out, width 0.25s ease-in-out;*/
   /*transition: opacity 0.25s ease-in-out;*/
+}
+
+/*.floating-menu *:not(:first-child) {
+  display:none;
+}*/
+
+.floating-menu-not-minimized {
+  height:16em;
+  width:16em;
+}
+
+.floating-menu-minimized {
+  height:0.5em;
+  width:0.5em;
 }
 
 /*.floating-menu:hover {
@@ -44,6 +61,7 @@ nav ul {
   display:block;
   position:relative;
   height:3.5em;
+  margin-bottom:-3.5em;
   width:3.5em;
   top:-1.5em;
   left:-1.5em;
@@ -56,17 +74,24 @@ nav ul {
   display:block;
   position:relative;
   height:1.5em;
+  margin-bottom:-1.5em;
   width:1.5em;
-  top:-5em;
+  top:-1.5em;
   left:2.25em;
   z-index:1;
-  background-image: url( 'images/newmenu/sticky_icon_on.png' );
   background-size:cover;
+}
+
+.pin-on {
+  background-image: url( 'images/newmenu/sticky_icon_on.png' );
+}
+
+.pin-off {
+  background-image: url( 'images/newmenu/sticky_icon_off.png' );
 }
 
 .floating-menu ul {
   position:relative;
-  top:-5em;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -91,10 +116,6 @@ nav ul {
 
 .floating-menu li a:hover {
   -webkit-animation: shake 0.25s infinite;
-}
-
-.floating-menu li a span {
-  display:none;
 }
 
 .floating-menu .icon-home {
