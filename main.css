@@ -20,13 +20,19 @@ img {
   clear: both;
 }
 
-.notdisplayed {
-  display:none;
+.hidden {
+  visibility:hidden;
+}
+
+.opacity0 {
+  opacity:0;
 }
 
 nav ul {
   list-style: none;
 }
+
+/********************* FLOATING MENU *********************/
 
 .floating-menu {
   display:block;
@@ -35,13 +41,13 @@ nav ul {
   background-color:#ffffff;
   border-radius:25px;
   opacity:0.2;
-  /*transition:height 0.25s ease-in-out, width 0.25s ease-in-out;*/
-  /*transition: opacity 0.25s ease-in-out;*/
+  z-index:1;
+  transition:height 0.25s ease-in-out, width 0.25s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/*.floating-menu *:not(:first-child) {
-  display:none;
-}*/
+.floating-menu:hover {
+  opacity:1;
+}
 
 .floating-menu-not-minimized {
   height:16em;
@@ -53,10 +59,6 @@ nav ul {
   width:0.5em;
 }
 
-/*.floating-menu:hover {
-  opacity:1;
-}*/
-
 .floating-menu .minimize {
   display:block;
   position:relative;
@@ -65,7 +67,7 @@ nav ul {
   width:3.5em;
   top:-1.5em;
   left:-1.5em;
-  z-index:1;
+  z-index:2;
   background-image: url( 'images/newmenu/menu2.png' );
   background-size:cover;
 }
@@ -78,8 +80,9 @@ nav ul {
   width:1.5em;
   top:-1.5em;
   left:2.25em;
-  z-index:1;
+  z-index:2;
   background-size:cover;
+  transition:opacity 0.25s ease-in-out;
 }
 
 .pin-on {
@@ -95,7 +98,8 @@ nav ul {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  margin:0;padding:0;
+  margin:0;
+  padding:0;
 }
 
 .floating-menu li a {
@@ -105,6 +109,7 @@ nav ul {
   margin:auto;
   background-size:cover;
   background-position:center;
+  transition:height 0.25s ease-in-out, width 0.25s ease-in-out;
 }
 
 @-webkit-keyframes shake {
@@ -133,6 +138,8 @@ nav ul {
 .floating-menu .icon-contact {
   background-image: url( 'images/newmenu/mm4.png' );
 }
+
+/********************* MAIN PAGE *********************/
 
 .container {
   max-width: 106em;
@@ -566,6 +573,8 @@ nav ul {
   font-size: 1.4em;
   line-height: 1.6;
 }
+
+/********************* FOOTER *********************/
 
 .footer {
   padding: 1em;
