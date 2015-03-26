@@ -34,7 +34,7 @@ nav ul {
   position: fixed;
   width: 15em;
   height: 15em;
-  padding: 2em;
+  padding: 1.5em;
   background-color: #ffffff;
   border-radius: 2.25em;
   opacity: 0.2;
@@ -50,6 +50,7 @@ nav ul {
   .fancy-menu {
     width: 20em;
     height: 20em;
+    padding: 2em;
   }
 }
 
@@ -57,7 +58,7 @@ nav ul {
   .fancy-menu {
     width: 25.4em;
     height: 25.4em;
-    /*padding: 2em;*/
+    padding: 2em;
   }
 }
 
@@ -75,6 +76,7 @@ nav ul {
 .fancy-menu--minimized {
   height: 0.5em;
   width: 0.5em;
+  padding: 2em;
 }
 
 .fancy-menu__pin {
