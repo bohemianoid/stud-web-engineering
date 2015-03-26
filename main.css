@@ -32,8 +32,8 @@ nav ul {
 
 .fancy-menu {
   position: fixed;
-  width: 25.4em;
-  height: 25.4em;
+  width: 15em;
+  height: 15em;
   padding: 2em;
   background-color: #ffffff;
   border-radius: 2.25em;
@@ -44,6 +44,21 @@ nav ul {
 
 .fancy-menu:hover {
   opacity: 1;
+}
+
+@media only screen and ( min-width: 768px ) {
+  .fancy-menu {
+    width: 20em;
+    height: 20em;
+  }
+}
+
+@media only screen and ( min-width: 1100px ) {
+  .fancy-menu {
+    width: 25.4em;
+    height: 25.4em;
+    /*padding: 2em;*/
+  }
 }
 
 .fancy-menu__minimize {
@@ -89,11 +104,25 @@ nav ul {
 
 .fancy-menu li a {
   display: block;
-  height: 12.7em;
-  width: 12.7em;
+  height: 7.5em;
+  width: 7.5em;
   background-position: center;
   background-size: cover;
   transition: height 0.25s ease-in-out, width 0.25s ease-in-out;
+}
+
+@media only screen and ( min-width: 768px ) {
+  .fancy-menu li a {
+    width: 10em;
+    height: 10em;
+  }
+}
+
+@media only screen and ( min-width: 1100px ) {
+  .fancy-menu li a {
+    width: 12.7em;
+    height: 12.7em;
+  }
 }
 
 .fancy-menu--minimized li a {
