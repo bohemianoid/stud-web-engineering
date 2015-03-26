@@ -10,22 +10,33 @@ $(document).ready(function() {
   });
 
   // Draggable
-  $(".fancy-menu").draggable({ containment: "html" });
+  $(".fancy-menu").draggable({
+    containment: "window",
+    start: function() {
+      $(".fancy-menu").addClass("fancy-menu--moving");
+    },
+    stop: function() {
+      $(".fancy-menu").removeClass("fancy-menu--moving");
+    }
+  });
 
   // Move to nearest side
   $(".fancy-menu").mouseleave(function() {
-    if (!$(".fancy-menu").hasClass("fancy-menu--pinned")) {
+    if (!$(".fancy-menu").hasClass("fancy-menu--pinned") && !$(".fancy-menu").hasClass("fancy-menu--moving") ) {
       var viewportWidth = $(window).width();
       var viewportHeight = $(window).height();
+      var scrollTop = $(window).scrollTop();
       var menuWidth = $(this).outerWidth();
       var menuHeight = $(this).outerHeight();
       var menuOffset = $(this).offset();
+      var menuOffsetLeft = menuOffset.left;
+      var menuOffsetTop = menuOffset.top - scrollTop;
       var menuOffsetRight = viewportWidth - menuOffset.left - menuWidth;
-      var menuOffsetBottom = viewportHeight - menuOffset.top - menuHeight;
+      var menuOffsetBottom = viewportHeight + scrollTop - menuOffset.top - menuHeight;
 
       var distances = [
-        menuOffset.left,
-        menuOffset.top,
+        menuOffsetLeft,
+        menuOffsetTop,
         menuOffsetRight,
         menuOffsetBottom
       ]
@@ -56,8 +67,11 @@ $(document).ready(function() {
 
   // Responsive
   $(window).resize(function(){
-    if ($(window).width() <= 768){
+    if ($(window).width() < 768){
       $(".fancy-menu").addClass("fancy-menu--minimized");
+    }
+    if ($(window).width() >= 768){
+      $(".fancy-menu").removeClass("fancy-menu--minimized");
     }
   });
 });

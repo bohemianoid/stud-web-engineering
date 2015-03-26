@@ -31,7 +31,7 @@ nav ul {
 /********************* FLOATING MENU *********************/
 
 .fancy-menu {
-  position: absolute;
+  position: fixed;
   width: 25.4em;
   height: 25.4em;
   padding: 2em;
@@ -183,6 +183,7 @@ header {
 
 header nav {
   background: #414141;
+  height: 3.6em;
 }
 
 @media only screen and ( min-width: 480px ) {
@@ -190,6 +191,16 @@ header nav {
     width: 55%;
     padding-left: 5%;
   }
+}
+
+@media only screen and ( min-width: 768px ) {
+  header nav {
+    height: 6.2em;
+  }
+}
+
+.home header nav li {
+  display: none;
 }
 
 @media only screen and ( min-width: 480px ) {
