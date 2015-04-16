@@ -1,15 +1,15 @@
-<?php 
+<?php
     global $stylesheet_dir, $stylesheet_url;
 
     get_header();
 ?>
 	<?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		wp_mail( get_option('admin_email'), 'mail from '. $_POST['firstname'] .' '. $_POST['lastname'], 
-				 $_POST['message'] );}
+		wp_mail( get_option('admin_email'), 'mail from '. $_POST['firstname'] .' '. $_POST['lastname'], $_POST['message'] );
+  }
 	?>
 				<div class="container" style="background-image: url('<?php echoPicture($stylesheet_dir,'images/bg4.png');?>');background-size: 100%;background-repeat: no-repeat;background-color: #040205; min-height: 500px;" role="main">
-				
+
 					<div style="width:100%">
 						<br><br>
 						<p style="font-size: 340%; color:#fff;">
