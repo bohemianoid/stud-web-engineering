@@ -17,6 +17,7 @@ global $stylesheet_dir;
 				} else { // display blog entry
 					echo '<div class="transbox-big">';
 					$le_post = get_post($post->ID);
+					echo get_the_post_thumbnail($le_post->ID, 'thumbnail');
 					echo '<h1>'. $le_post->post_title . '<span class="author"> (by '. $le_post->post_author .')</span></h1>';
 					echo $le_post->post_content;
 				}

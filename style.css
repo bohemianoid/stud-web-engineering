@@ -233,7 +233,10 @@ figcaption.single > p{
 					font-size:0.25em;
 				}
 				
-
+				.transbox-big img {
+					float: left;
+					margin: 10px;
+				}
 
 				div .ctransbox {
 					

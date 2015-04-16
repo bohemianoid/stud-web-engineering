@@ -23,7 +23,7 @@
                        <li class="blog_list__item">
 							<figure class="blog_list__item__inner">
 								<figcaption>
-									<img src="<?php echoPicture($stylesheet_dir,'./images/blog/b1.jpg');?>" alt="">
+									<?php the_post_thumbnail('thumbnail'); ?>
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 									<?php the_content('moar', false); ?>
 								</figcaption>
