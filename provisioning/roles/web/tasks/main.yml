@@ -1,0 +1,12 @@
+---
+- name:    install packages
+  yum:     name={{ item }} state=present
+  with_items:
+    - httpd
+
+- name:    httpd service state
+  service: name=httpd state=started enabled=yes
+
+- name:    symlink document root
+  file:    src=/vagrant/{{ document_root }} dest=/var/www/html state=link force=yes
+  notify:  restart httpd
