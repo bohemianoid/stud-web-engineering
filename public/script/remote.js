@@ -1,3 +1,4 @@
+var socket = io();
 var currentImage = 0; // the currently selected image
 var imageCount = 7; // the maximum number of images available
 
@@ -8,9 +9,8 @@ function showImage (index){
   document.querySelector("img.selected").classList.toggle("selected");
   images[index].classList.toggle("selected");
 
-  // Send the command to the screen
-  // TODO
-  alert("TODO send the index to the screen")
+  // TODO Send the command to the screen
+  socket.emit( 'index from remote', { index: index } );
 }
 
 function initialiseGallery(){
@@ -40,21 +40,45 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   connectToServer();
+
+  socket.on( 'update settings', function( data ) {
+    var list = document.createElement( 'ul' );
+
+    for ( var key in data ) {
+      var screen = document.createElement( 'li' );
+      var button = document.createElement( 'button' );
+
+      screen.appendChild( document.createTextNode( data[ key ][ 'name' ] ) );
+      button.className = 'pure-button';
+
+      if ( data[ key ][ 'remotes' ].indexOf( socket.id ) == -1 ) {
+        button.appendChild( document.createTextNode( 'Connect' ) );
+
+        ( function( key ) {
+          button.addEventListener( 'click', function() {
+            socket.emit( 'connect remote to screen', { id: key, index: currentImage } );
+          } );
+        } ( key ) );
+      } else {
+        button.appendChild( document.createTextNode( 'Disconnect' ) );
+
+        ( function( key ) {
+          button.addEventListener( 'click', function() {
+            socket.emit( 'disconnect remote from screen', { id: key } );
+          } );
+        } ( key ) );
+      }
+
+      screen.appendChild( button );
+      list.appendChild( screen );
+    }
+
+    document.getElementById( 'menu' ).innerHTML = '';
+    document.getElementById( 'menu' ).appendChild( list );
+  } );
 });
 
 function connectToServer(){
   // TODO connect to the socket.io server
-  var socket = io();
-  socket.on( 'remote', function( data ) {
-    var settings = document.createElement( 'ul' );
-
-    for( var i = 0; i < data.screens.length; i++ ) {
-      var screen = document.createElement( 'li' );
-      screen.appendChild( document.createTextNode( data.screens[i] ) );
-      settings.appendChild( screen );
-    }
-
-    document.getElementById( 'menu' ).innerHTML = '';
-    document.getElementById( 'menu' ).appendChild( settings );
-  } );
+  socket.emit( 'connect remote' );
 }

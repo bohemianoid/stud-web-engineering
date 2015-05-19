@@ -1,3 +1,4 @@
+var socket = io();
 var devicename; // the name of this screen and specified in the URL
 var imageCount = 7; // the maximum number of images available
 
@@ -41,9 +42,15 @@ function getQueryParams() {
   return params;
 }
 
-
 function connectToServer( devicename ){
   // TODO connect to the socket.io server
-  var socket = io();
-  socket.emit( 'screen', { name: devicename } );
+  socket.emit( 'connect screen', { name: devicename } );
+
+  socket.on( 'show image on screen', function( data ) {
+    showImage( data.index );
+  } );
+
+  socket.on( 'clear image from screen', function() {
+    clearImage();
+  } );
 }
