@@ -32,7 +32,8 @@ function initialiseGallery(){
   window.onbeforeunload = function() {
     var liElements = document.getElementsByTagName("li");
     for (var i = 0; i < liElements.length; ++i)
-      liElements[i].childNodes[1].click();
+      if (liElements[i].childNodes[1].innerHTML == "Disconnect")
+        liElements[i].childNodes[1].click();
   }
 }
 
