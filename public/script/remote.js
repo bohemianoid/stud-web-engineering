@@ -29,6 +29,11 @@ function initialiseGallery(){
   }
 
   document.querySelector("img").classList.toggle('selected');
+  window.onbeforeunload = function() {
+    var liElements = document.getElementsByTagName("li");
+    for (var i = 0; i < liElements.length; ++i)
+      liElements[i].childNodes[1].click();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
