@@ -56,6 +56,17 @@ io.on( 'connection', function( socket ) {
       delete screens[ socket.id ];
     }
 
+    for ( var id in screens ) {
+      if ( screens[ id ][ 'remotes' ].indexOf( socket.id ) > -1 ) {
+        screens[ id ][ 'remotes' ].splice( screens[ id ][ 'remotes' ].indexOf( socket.id ), 1 );
+        console.log( 'remote disconnected' );
+      }
+
+      if ( screens[ id ][ 'remotes' ].length == 0 ) {
+        io.to( screens[ id ][ 'name' ] ).emit( 'clear image from screen' );
+      }
+    }
+
     io.emit( 'update settings', screens );
   } );
 } );
