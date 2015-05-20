@@ -36,7 +36,9 @@ io.on( 'connection', function( socket ) {
 
   socket.on( 'disconnect remote from screen', function( data ) {
     screens[ data.id ][ 'remotes' ].splice( screens[ data.id ][ 'remotes' ].indexOf( socket.id ), 1 );
-    io.to( screens[ data.id ][ 'name' ] ).emit( 'clear image from screen' );
+    if ( screens[ data.id ][ 'remotes' ].length == 0 ) {
+      io.to( screens[ data.id ][ 'name' ] ).emit( 'clear image from screen' );
+    }
     socket.leave( screens[ data.id ][ 'name' ] );
     io.emit( 'update settings', screens );
     console.log( 'remote disconnected from ' + screens[ data.id ][ 'name' ] );
